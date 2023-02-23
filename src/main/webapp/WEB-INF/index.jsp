@@ -47,12 +47,12 @@
                         </div>
                         <div>
                         <form:label path="password">Password:</form:label>
-                        <form:input  class="form-control border border-dark" path="password"/>
+                        <form:input  type="password" class="form-control border border-dark" path="password"/>
                         <form:errors class="text-danger" path="password"/>
                         </div>
                         <div>
                         <form:label path="confirm">Confirm PW:</form:label>
-                        <form:input  class="form-control border border-dark" path="confirm"/>
+                        <form:input type="password" class="form-control border border-dark" path="confirm"/>
                         <form:errors class="text-danger" path="confirm"/>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         </div>
                         <div>
                             <form:label path="password">Password:</form:label>
-                            <form:input class="form-control border border-dark" path="password"/>
+                            <form:input type="password" class="form-control border border-dark" path="password"/>
                             <form:errors class="text-danger" path="password"/>
                         </div>
                     <input class="mt-4 btn btn-dark btn-sm gap-2" type="submit" value="login">

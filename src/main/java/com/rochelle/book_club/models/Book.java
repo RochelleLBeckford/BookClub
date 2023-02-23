@@ -8,18 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 // Establish a book as an item going to track in our Application -> need to link this to my DB
 @Entity
 @Table(name = "books")
 public class Book {
-// need `@Entity` and `@Table` `@Id` `@GeneratedValue` to the model to connect to my DB
+    // need `@Entity` and `@Table` `@Id` `@GeneratedValue` to the model to connect to my DB
+    // got everything to wordk -> now to add validations -> need to put the logic in my controller
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank // -> validation -> this will not let the user move forward until the data has been entered correctly
     private String title ;
+
+    @NotBlank // -> validation -> this will not let the user move forward until the data has been entered correctly
     private String author;
+
+    @NotBlank // -> validation -> this will not let the user move forward until the data has been entered correctly
     private String myThoughts;
 
     // how to show that a user has many books and that a book has one user

@@ -104,5 +104,11 @@ public class UserService {
             return false;
         }
     }
+
+    // ~ need a method to find a single user
+    public User getActiveUser(Long id) {
+        // if they can find iit return user if not return null
+        return userRepository.findById(id).orElse(null);
+    }
 }
 

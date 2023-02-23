@@ -18,6 +18,13 @@ public class LoginUser {
     private String password;
     
     public LoginUser() {}
+
+
+    public LoginUser(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     
     // TODO - Don't forget to generate getters and setters
 

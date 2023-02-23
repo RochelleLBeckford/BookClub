@@ -31,13 +31,16 @@
         <div class= "border-dark">
             <div >
                 <div class="d-flex justify-content-between">
-                    <h2 class="text-center mb-2" >Add a Book to Your Shelf!</h2>
+                    <h2 class="text-center mb-2" >Change your Entry</h2>
                     <a href="/books">Back to the Shelves</a>
                 </div>
             </div>
             <div class="row d-flex gap-4">
                 <div class="col card border-dark p-4">
-                    <form:form action="/books" method="post" modelAttribute="book">
+                    <!-- this has to be the same route for the update -->
+                    <form:form action="/books/${book.id}" method="post" modelAttribute="book">
+                        <!-- since browser does not recognize put we have to use a hidden input -->
+                        <input type="hidden" name="_method" value="put">
                         <!-- 
                             -> name of the attribute on the book class 
                             -> should be able to use just userId since it is from session
@@ -58,7 +61,7 @@
                             <form:errors path="myThoughts"></form:errors>
                             <form:input path="myThoughts"></form:input>
                         </div>
-                        <input class="btn btn-dark btn-sm mt-3 mb-3" type="submit" value="Add Book">
+                        <input class="btn btn-success btn-sm mt-3 mb-3" type="submit" value="Edit Book">
                     </form:form>
                 </div>
             </div>

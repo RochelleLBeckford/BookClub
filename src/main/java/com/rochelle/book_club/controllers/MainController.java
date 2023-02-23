@@ -133,7 +133,7 @@ public class MainController {
     public String logout(HttpSession session) {
         // now to clear session
         // 1 way -> session.setAttribute("userId", null);
-        // 22nd way -> this clears out everything 
+        // 2nd way -> this clears out everything 
         session.invalidate();
         return "redirect:/";
     }

@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login and Registration</title>
+    <title>Read Share</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -27,22 +27,22 @@
 </head>
 <body>
     <!-- ${userId} -->
-    ${books}
-    <div class="container mt-2">
+    <!-- ${books} -->
+    <div class="container mt-4">
         <div>
             <div class="d-flex justify-content-between">
-                <h1 class="text-center mb-2" >Welcome, </h1>
-                <a href="">Logout</a>
+                <h1 class="text-center mb-2" >Welcome, <c:out value="${userName}"></c:out></h1>
+                <a href="/logout">Logout</a>
             </div>
             <div class="d-flex justify-content-between">
                 <p class="text-center">Books from everyone's shelves:</p>
-                <a href="">+ Add a Book to my shelf!</a>
+                <a href="/books/new">+ Add a Book to my shelf!</a>
             </div>
         </div>
         <div class="row d-flex gap-4">
             <div class="col card border-dark">
                 <!-- want to loop through my books and have them come out as a table -->
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <th>Tiitle</th>
                         <th>Author</th>
@@ -56,7 +56,8 @@
                         -->
                         <c:forEach var="book" items="${books}">
                             <tr>
-                                <td>${book.title}</td>
+                                <!-- want the name of the book to link to the show page -->
+                                <td><a href="/books/${book.id}">${book.title}</a></td>
                                 <td>${book.author}</td>
                                 <!-- ! this is not working -->
                                 <!-- ~ got this to work after i added the id manually in DB -->
@@ -67,7 +68,7 @@
                 </table>
             </div>
         </div>
-        <a class="btn btn-primary mt-2" href="/books/new">Create a Book</a>
+        <a class="btn btn-success mt-2" href="/books/new">Create a Book</a>
     </div>
 
 </body>
